@@ -2,11 +2,14 @@ nav{
     background-color: #172033;
     padding: 20px;
     text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 1000;
 }
 nav a{
     color: #F4F1EA;
     text-decoration: none;
-    margin: 15px;
+    margin: 0 15px;
     font-size: 18px;
 }
 nav a:hover{
@@ -23,13 +26,18 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50;
+    gap: 50px;
+    animation: fadeIn 1s ease-in;
 }
 
 .intro img{
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #172033;
+    box-shadow: 0 8pxm 20px rgba(0, 0, 0, 0.15);
+
 }
 
 .projects{
@@ -37,35 +45,32 @@ img{
     gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 .project-card{
     background-color: #FFFFFF;
     padding: 25px;
     width: 280px;
+    min-height: 190px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
 }
 
 .project-card:hover{
     transform: translateY(-10px);
-    transition: 0.4s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.git{
-    background-color: #172033;
-    padding: 10px;
-    font-family: Consolas;
-    color: #F4F1EA;
-    width: 60px;
-    border-radius: 17px;
-    height: 25px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.project-card h3{
+    color: #172033;
+    margin-bottom: 10px;
 }
+
+.project-card p{
+    line-height: 1.6;
+}
+
 
 
 .git a{
@@ -80,6 +85,7 @@ img{
 }
 
 body{
+    margin: 0;
     background-color: #F4F1EA;
     color: #111111;
     font-family: Arial, sans-serif;
@@ -101,6 +107,14 @@ h1{
     color: #F4F1EA;
     padding: 10px 20px;
     border-radius: 20px;
+    display: inline-block;
+    transition: 0.35s;
+
+}
+
+.Skills span:hover{
+    background-color: #E63946;
+    transform: translateY(-5px);
 }
 
 .about-text{
@@ -132,5 +146,162 @@ h1{
 }
 
 section{
-    padding: 50px 5%;
+    padding: 60px 10%;
 }
+
+.yt{
+    background-color: #0072b1 ;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 17px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 70px;
+    height: 20px;
+    
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-buttons a{
+    padding: 10px 20px;
+    border-radius: 17px;
+    text-decoration: none;
+    transition: 0.35s;
+}
+.git{
+    background-color: #172033;
+    padding: 10px;
+    font-family: Consolas;
+    color: #F4F1EA;
+    width: 60px;
+    border-radius: 17px;
+    height: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
+.yt:hover{
+    transform: translateY(-5px);
+    transition: 0.35s;
+    background-color:#172033;
+    box-shadow: #111111;
+}
+
+@media (max-width:600px) {
+    .intro{
+        flex-direction: column;
+        text-align: center;
+        gap:30px;
+
+    }
+
+    .intro h1{
+        font-size: 40px;
+
+    }
+
+    .intro img{
+        width: 180px;
+        height: 180px;
+    }
+
+    .projects{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card{
+        width: 90%;
+
+    }
+
+    .nav a{
+        margin: 8px;
+    }
+
+    .social-buttons{
+        flex-wrap: wrap;
+    }
+}
+
+#contact{
+    text-align: center;
+    padding: 80px 20px;
+
+}
+
+#contact p{
+    font-size: 18px;
+    line-height: 1.6;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.intro h1{
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #172033;
+
+}
+
+.intro h2{
+    color: #172033;
+}
+
+.intro p{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+#about h2,
+#skills h2,
+#projects h2 {
+    border-left: 4px solid #E63946;
+    padding-left: 12px;
+}
+
+footer{
+    text-align: center;
+    padding: 25px;
+    background-color: #172033;
+    color: #F4F1EA;
+    margin-top: 40px;
+}
+
